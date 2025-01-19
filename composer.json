@@ -12,19 +12,13 @@
     "license": "MIT",
     "homepage": "https://juzaweb.com",
     "require": {
-        "php": "^7.2|^8.0",
-        "guzzlehttp/guzzle": "^6.5",
-        "intervention/image": "^2.5",
-        "juzaweb/config": "^2.2",
-        "juzaweb/image-optimizer": "^1.4",
-        "juzaweb/laravel-chunk-upload": "^1.4",
-        "juzaweb/log-viewer": "^5.2",
-        "juzaweb/jwt-auth": "^1.0",
-        "juzaweb/l5-swagger": "^6.0"
+        "php": "^8.2|^8.3",
+        "guzzlehttp/guzzle": "^7.9",
+        "intervention/image": "^3.11"
     },
     "require-dev": {
-      "juzaweb/laravel-cms": "^1.0",
-      "phpunit/phpunit": "6.0 | 7.0 | 7.5 | 8.4 | ^8.5"
+        "juzaweb/laravel-cms": "^1.0",
+        "phpunit/phpunit": "^11"
     },
     "autoload": {
       "psr-4": {
