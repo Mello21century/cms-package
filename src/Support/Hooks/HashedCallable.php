@@ -2,7 +2,7 @@
 
 namespace Juzaweb\Support\Hooks;
 
-use Opis\Closure\SerializableClosure;
+use function Opis\Closure\{serialize};
 
 class HashedCallable
 {
@@ -35,7 +35,7 @@ class HashedCallable
     {
         return base64_encode(
             serialize(
-                new SerializableClosure($this->callback)
+                $this->callback
             )
         );
     }
