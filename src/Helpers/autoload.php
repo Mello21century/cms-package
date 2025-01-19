@@ -7,7 +7,6 @@
  * @link       https://juzaweb.com/cms
  * @license    MIT
  */
-
 $loader = require JW_BASEPATH . '/vendor/autoload.php';
 
 $pluginFile = JW_BASEPATH . '/bootstrap/cache/plugins_statuses.php';
@@ -40,8 +39,9 @@ if (file_exists($themeFile)) {
         'path' => $themePath . '/default',
     ];
 }
-
-$path = $theme['path'] . '/src';
+$path = is_dir($theme['path']) ?
+    $theme['path'] . '/src' :
+    JW_BASEPATH . '/themes/' . $theme['path'] . '/src';
 
 if (is_dir($path)) {
     $loader->setPsr4('Theme\\', [$path]);
