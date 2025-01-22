@@ -67,7 +67,7 @@ trait PostTypeController
     /**
      * @return string
      */
-    abstract protected function getModel();
+    abstract protected function getModel(...$params);
 
     protected function afterSave(Request $request, $model)
     {
@@ -75,12 +75,12 @@ trait PostTypeController
         $model->syncTaxonomies($request->all());
     }
 
-    protected function getTitle()
+    protected function getTitle(...$params)
     {
         return $this->getSetting()->get('label');
     }
 
-    protected function validator(array $attributes)
+    protected function validator(array $attributes,...$params)
     {
         $validator = Validator::make($attributes, [
             'title' => 'required|string|max:250',
@@ -108,7 +108,7 @@ trait PostTypeController
      * @return \Juzaweb\Abstracts\DataTable
      * @throws \Exception
      */
-    protected function getDataTable()
+    protected function getDataTable(...$params)
     {
         $dataTable = new PostTypeDataTable();
         $dataTable->mountData($this->getSetting()->toArray());

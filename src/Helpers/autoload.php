@@ -46,3 +46,4 @@ $path = is_dir($theme['path']) ?
 if (is_dir($path)) {
     $loader->setPsr4('Theme\\', [$path]);
 }
+
